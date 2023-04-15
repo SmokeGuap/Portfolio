@@ -36,6 +36,7 @@ function Navbar({ isTopOfPage, selectedPage, setSelectedPage }: NavbarContext) {
   const [isMenuToggled, setMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery('(min-width: 768px)');
   const navbarBackground = isTopOfPage ? '' : 'bg-red-300';
+
   return (
     <nav className={`${navbarBackground} w-full z-40 fixed top-0 py-6`}>
       <div className='flex items-center justify-between mx-auto w-5/6'>
