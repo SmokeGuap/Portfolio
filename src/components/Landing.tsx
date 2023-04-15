@@ -49,12 +49,12 @@ function Landing({ setSelectedPage }: LandingContext) {
             <span className='xs:relative xs:text-dark-blue xs:font-semibold z-10 xs:before:content-brush before:absolute before:-left-[25px] before:-top-[80px] before:z-[-1]'>
               Ryzhkov
             </span>
-            <p className='mt-10 mb-7 text-sm text-center md:text-start'>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Distinctio cupiditate minus ipsa quibusdam, maxime similique vitae
-              neque repellat atque porro dolor consequuntur quae consectetur,
-              pariatur quis repudiandae corporis qui suscipit!
-            </p>
+          </p>
+          <p className='mt-10 mb-7 text-sm text-center md:text-start'>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+            cupiditate minus ipsa quibusdam, maxime similique vitae neque
+            repellat atque porro dolor consequuntur quae consectetur, pariatur
+            quis repudiandae corporis qui suscipit!
           </p>
         </motion.div>
         <motion.div
