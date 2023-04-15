@@ -7,42 +7,38 @@ type DotGroupContext = {
 
 function DotGroup({ selectedPage, setSelectedPage }: DotGroupContext) {
   const selectedStyles =
-    'relative bg-yellow-300 before:absolute before:w-6 before:h-6 before:rounded-full before:border-2 before:border-yellow-300 before:left-[-50%] before:top-[-50%]';
+    'relative bg-yellow before:absolute before:w-6 before:h-6 before:rounded-full before:border-2 before:border-yellow before:left-[-50%] before:top-[-50%]';
   return (
     <div className='flex flex-col gap-6 fixed top-[60%] right-7'>
       <AnchorLink
-        className={`${selectedPage == 'home' ? selectedStyles : 'bg-gray-300'}
-  w-3 h-3 rounded-full bg-gray-500`}
+        className={`${selectedPage == 'home' ? selectedStyles : 'bg-gray'}
+  w-3 h-3 rounded-full`}
         href={`#home`}
         onClick={() => setSelectedPage('home')}
       ></AnchorLink>
       <AnchorLink
-        className={`${selectedPage == 'skills' ? selectedStyles : 'bg-gray-300'}
-  w-3 h-3 rounded-full bg-gray-500`}
+        className={`${selectedPage == 'skills' ? selectedStyles : 'bg-gray'}
+  w-3 h-3 rounded-full`}
         href={`#skills`}
         onClick={() => setSelectedPage('skills')}
       ></AnchorLink>
       <AnchorLink
-        className={`${
-          selectedPage == 'projects' ? selectedStyles : 'bg-gray-300'
-        }
-  w-3 h-3 rounded-full bg-gray-500`}
+        className={`${selectedPage == 'projects' ? selectedStyles : 'bg-gray'}
+  w-3 h-3 rounded-full`}
         href={`#projects`}
         onClick={() => setSelectedPage('projects')}
       ></AnchorLink>
       <AnchorLink
         className={`${
-          selectedPage == 'testimonials' ? selectedStyles : 'bg-gray-300'
+          selectedPage == 'testimonials' ? selectedStyles : 'bg-gray'
         }
-  w-3 h-3 rounded-full bg-gray-500`}
+  w-3 h-3 rounded-full`}
         href={`#testimonials`}
         onClick={() => setSelectedPage('testimonial')}
       ></AnchorLink>
       <AnchorLink
-        className={`${
-          selectedPage == 'contact' ? selectedStyles : 'bg-gray-300'
-        }
-  w-3 h-3 rounded-full bg-gray-500`}
+        className={`${selectedPage == 'contact' ? selectedStyles : 'bg-gray'}
+  w-3 h-3 rounded-full`}
         href={`#contact`}
         onClick={() => setSelectedPage('contact')}
       ></AnchorLink>

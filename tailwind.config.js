@@ -6,6 +6,10 @@ export default {
     extend: {
       colors: {
         'dark-blue': '#010026',
+        blue: '#2CBCE9',
+        red: '#DC4492',
+        yellow: '#FDCC49',
+        gray: '#ededed',
       },
       fontFamily: {
         opensans: ['Open Sans', 'sans-serif'],
