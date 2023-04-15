@@ -30,10 +30,10 @@ const Project = ({ title, subTitle, project }: ProjectContext) => {
   return (
     <motion.div variants={projectVariant} className='relative'>
       <div
-        className='absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-      bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue'
+        className='absolute h-full w-full opacity-0 hover:opacity-80 transition duration-500
+      bg-gray z-30 flex flex-col justify-center items-center text-center p-16 text-dark-blue'
       >
-        <p className='text-2xl font-playfair'>{title}</p>
+        <p className='text-2xl'>{title}</p>
         <p className='mt-7'>{subTitle}</p>
       </div>
       <img src={project} alt={project} width={'400px'} />

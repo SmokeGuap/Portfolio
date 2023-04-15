@@ -3,6 +3,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import openMenu from '../assets/openMenu.svg?url';
 import closeMenu from '../assets/closeMenu.svg?url';
+import github from '../assets/github.svg?url';
 
 type NavbarContext = {
   isTopOfPage: boolean;
@@ -38,9 +39,14 @@ function Navbar({ isTopOfPage, selectedPage, setSelectedPage }: NavbarContext) {
   const navbarBackground = isTopOfPage ? '' : 'bg-red';
 
   return (
-    <nav className={`${navbarBackground} w-full z-40 fixed top-0 py-6`}>
+    <nav
+      className={`${navbarBackground} w-full z-40 fixed top-0 py-6 transition duration-300`}
+    >
       <div className='flex items-center justify-between mx-auto w-5/6'>
-        <h4 className='text-3xl font-bold'>JE</h4>
+        {/* <h4 className='text-3xl font-bold'></h4> */}
+        <a href='https://github.com/SmokeGuap'>
+          <img src={github} width={'46px'} />
+        </a>
         {isAboveSmallScreens ? (
           <div className='flex justify-between gap-16 text-sm font-semibold'>
             <Link
@@ -55,11 +61,6 @@ function Navbar({ isTopOfPage, selectedPage, setSelectedPage }: NavbarContext) {
             />
             <Link
               page='Projects'
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page='Testimonials'
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
@@ -98,11 +99,6 @@ function Navbar({ isTopOfPage, selectedPage, setSelectedPage }: NavbarContext) {
               />
               <Link
                 page='Projects'
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <Link
-                page='Testimonials'
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />

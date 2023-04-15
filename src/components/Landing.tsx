@@ -70,7 +70,7 @@ function Landing({ setSelectedPage }: LandingContext) {
         >
           <AnchorLink
             className='bg-gradient-rainblue text-dark-blue rounded-sm py-3 px-7 font-semibold
-              hover:bg-blue-300 hover:text-white transition duration-500'
+              hover:bg-blue hover:text-white transition duration-500'
             onClick={() => setSelectedPage('contact')}
             href='#contact'
           >
@@ -81,7 +81,7 @@ function Landing({ setSelectedPage }: LandingContext) {
             onClick={() => setSelectedPage('contact')}
             href='#contact'
           >
-            <div className='bg-dark-blue hover:text-red-300 transition duration-500 w-full h-full flex items-center justify-center px-10 font-opensans'>
+            <div className='bg-dark-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center px-10 font-opensans'>
               Let's talk.
             </div>
           </AnchorLink>
