@@ -1,8 +1,11 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import openMenu from '../assets/openMenu.svg?url';
+import closeMenu from '../assets/closeMenu.svg?url';
 
-type PageContext = {
+type NavbarContext = {
+  isTopOfPage: boolean;
   selectedPage: string;
   setSelectedPage: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -19,8 +22,8 @@ const Link = ({
   const lowerCasePage = page.toLowerCase();
   return (
     <AnchorLink
-      className={`${selectedPage == lowerCasePage ? 'text-yellow' : ''}
-      hover:text-yellow transition duration-500`}
+      className={`${selectedPage == lowerCasePage ? 'text-yellow-300' : ''}
+      hover:text-yellow-300 transition duration-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
@@ -29,14 +32,14 @@ const Link = ({
   );
 };
 
-function Navbar({ selectedPage, setSelectedPage }: PageContext) {
+function Navbar({ isTopOfPage, selectedPage, setSelectedPage }: NavbarContext) {
   const [isMenuToggled, setMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery('(min-width: 768px)');
-
+  const navbarBackground = isTopOfPage ? '' : 'bg-red-300';
   return (
-    <nav className='w-full z-40 fixed top-0 py-6'>
+    <nav className={`${navbarBackground} w-full z-40 fixed top-0 py-6`}>
       <div className='flex items-center justify-between mx-auto w-5/6'>
-        <h4 className='text-3xl font-bold'>{}</h4>
+        <h4 className='text-3xl font-bold'>JE</h4>
         {isAboveSmallScreens ? (
           <div className='flex justify-between gap-16 text-sm font-semibold'>
             <Link
@@ -44,9 +47,71 @@ function Navbar({ selectedPage, setSelectedPage }: PageContext) {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
+            <Link
+              page='Skills'
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page='Projects'
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page='Testimonials'
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page='Contact'
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
           </div>
         ) : (
-          <div></div>
+          <button
+            className='rounded-full bg-red-300 p-2'
+            onClick={() => setMenuToggled(!isMenuToggled)}
+          >
+            <img src={openMenu} alt='openMenu' width={'30px'} />
+          </button>
+        )}
+
+        {!isAboveSmallScreens && isMenuToggled && (
+          <div className='fixed right-0 bottom-0 h-full bg-blue-300 w-[300px]'>
+            <div className='flex justify-end p-12'>
+              <button onClick={() => setMenuToggled(!isMenuToggled)}>
+                <img alt='closeMenu' src={closeMenu} width={'30px'} />
+              </button>
+            </div>
+            <div className='flex flex-col gap-10 ml-[33%] text-2xl text-dark-blue'>
+              <Link
+                page='Home'
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page='Skills'
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page='Projects'
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page='Testimonials'
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page='Contact'
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
+          </div>
         )}
       </div>
     </nav>
