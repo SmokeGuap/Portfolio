@@ -10,6 +10,7 @@ export default {
         red: '#DC4492',
         yellow: '#FDCC49',
         gray: '#ededed',
+        'opaque-black': 'rgba(0,0,0,0.35)',
       },
       fontFamily: {
         opensans: ['Open Sans', 'sans-serif'],
