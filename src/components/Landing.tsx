@@ -1,7 +1,7 @@
 import useMediaQuery from '../hooks/useMediaQuery';
 import { motion } from 'framer-motion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import profile from '../assets/profile.jpg?url';
+import profile from '../assets/profile.png?url';
 import SocialMedia from './SocialMedia';
 
 type LandingContext = {
@@ -14,7 +14,7 @@ function Landing({ setSelectedPage }: LandingContext) {
   return (
     <section
       id='home'
-      className='md:flex md:justify-between md:items-center md:h-full gap-16 py-10'
+      className='md:flex md:justify-between md:items-center md:h-screen gap-16 py-10'
     >
       <div className='md:order-2 flex justify-center basis-3/5 mt-16 md:mt-32'>
         {isAboveMediumScreens ? (
